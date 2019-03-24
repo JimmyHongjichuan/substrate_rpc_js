@@ -1,0 +1,24 @@
+{
+  "name": "substrate_rpc_js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://JimmyHongjichuan@github.com/JimmyHongjichuan/substrate_rpc_js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JimmyHongjichuan/substrate_rpc_js/issues"
+  },
+  "homepage": "https://github.com/JimmyHongjichuan/substrate_rpc_js#readme",
+  "dependencies": {
+    "@polkadot/api": "^0.50.1",
+    "@polkadot/keyring": "^0.40.1",
+    "@polkadot/util": "^0.40.1"
+  }
+}
