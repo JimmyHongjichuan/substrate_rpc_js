@@ -1,12 +1,14 @@
+// @ts-check
+// Required imports
 const { ApiPromise, WsProvider } = require('@polkadot/api');
 const { Keyring } = require('@polkadot/keyring');
 const { stringToU8a } = require('@polkadot/util');
-const ALICE_SEED ='Alice'.padEnd(32, ' ');//'Aliceabf8e5bdbe30c65656c0a3cbd181ff8a56294a69dfedd27982aace4a76909115';
+const ALICE_SEED = 'Alice'.padEnd(32, ' ');
 const BOB_ADDR = '5DuY2XTM3SpJyEQXTciqiav7SgnqGzoxkDbFJLpL9xNZj3zx';
 
 async function main () {
-    // Initialise the provider to connect to the local node
-    const provider = new WsProvider('ws://127.0.0.1:9944');
+    // Initialise the provider to connect to the local nodefv
+    const provider = new WsProvider('ws://172.18.11.38:46857');
 
     // Create the API and wait until ready
     const api = await ApiPromise.create(provider);
@@ -21,10 +23,12 @@ async function main () {
     console.log(`You are connected to chain ${chain} using ${nodeName} v${nodeVersion}`);
 
     // Create an instance of the keyring
-    const keyring = new Keyring();
-
+    // const keyring = new Keyring();
+    //
     // Add Alice to our keyring (with the known seed for the account)
+    keyring = new Keyring();
     //const alice = keyring.addFromSeed(stringToU8a(ALICE_SEED));
+
     const alice = keyring.addFromUri("//Alice");
     // Instantiate the API
     //const api = await ApiPromise.create();
@@ -38,4 +42,4 @@ async function main () {
     console.log('Transfer sent with hash', hash.toHex());
 }
 
-main()
+main();
